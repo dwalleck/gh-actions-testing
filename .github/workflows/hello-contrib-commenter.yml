@@ -1,0 +1,23 @@
+name: Hello
+
+on:
+  pull_request:
+
+permissions: write-all
+
+jobs:
+  greet-contributor:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post a comment back to the PR if protected files have changed
+        uses: actions/github-script@v6 
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thank you for your pull request! We will review it as soon as possible. 👍'
+            })
