@@ -14,5 +14,4 @@ jobs:
         - name: Comment PR
           uses: thollander/actions-comment-pull-request@v2
           with:
-            message: |
-            Hello world ! :wave:
+            message: Hello!
