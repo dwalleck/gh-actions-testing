@@ -5,6 +5,8 @@ on:
 
 jobs:
   greet-contributor:
+    permissions:
+        pull-requests: write
     
     runs-on: ubuntu-latest
 
